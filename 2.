@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class book {
+private:
+        int bookid;
+        string bookname;
+        int bookprice;
+        int n;
+        int total;
+        public:
+void totalcost()
+{
+
+        cout<<"enter book id";
+        cin>>bookid;
+        cout << "Enter book name: ";
+        cin >>bookname;
+        cout<<"enter no. of copies:";
+        cin>>n;
+        cout<<"enter price of book:";
+        cin>>bookprice;
+        cout<<"total cost of books is :";
+        total=n*bookprice;
+        cout<<"total cost="<<total<<"";
+}
+void display()
+{cout<<"bookid:"<<bookid<<"";
+        cout<<"\n book name:"<<bookname<<"";
+        cout<<"\n price:"<<bookprice<<"";
+        cout<<"\nno. of copies"<<n<<"";
+        cout<<"\ntotal cost:"<<total<<"";
+}
+};
+int main()
+{
+book b1,b2,b3;
+        b1.totalcost();
+        b1.display();
+         b2.totalcost();
+       b2.display();
+         b3.totalcost();
+        b3.display();
+
+        return 0;
+}
+        
+                    
