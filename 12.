@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+class online_shopping {
+public:
+string name;
+int quantity;
+float price;
+};
+
+class details {
+public:
+float charge = 8.33;
+};
+
+class bill : public online_shopping,public details {
+public:
+void input(){
+
+    cout<<"enter item name"<<endl;
+    cin>>name;
+    
+    cout<<"enter quantity"<<endl;
+    cin>>quantity;
+    
+    cout<<"enter price"<<endl;
+    cin>>price;
+    
+}
+void display()
+{
+float total = price + charge;
+cout<<"Item : "<<name<<endl;
+cout<<"Quantity : "<<quantity<<endl;
+cout<<"Price : Rs. "<<price<<endl;
+cout<<"Shipping Charge : Rs. "<<charge<<endl;
+cout<<"Total : Rs. "<<total<<endl;
+}
+};
+int main()
+{
+
+bill b1;
+b1.input();
+b1.display();
+}
