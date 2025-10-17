@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+class Time {
+private:
+     int hr;
+    int min;
+    int seconds;
+
+public:
+    void input() {
+        cout << "Enter hours: ";
+        cin >> hr;
+        
+        cout << "Enter minutes: ";
+        cin >> min;
+        
+        cout << "Enter seconds: ";
+        cin >> seconds;
+    }
+
+    void display() {
+        cout << hr << ":" << min << ":" << seconds << endl;
+    }
+
+   
+    friend Time addTime(Time t1, Time t2);
+};
+
+
+Time addTime(Time t1, Time t2) {
+    Time time;
+    time.seconds = t1.seconds + t2.seconds;
+    time.min = t1.min + t2.minu + time.seconds / 60;
+    time.seconds = time.seconds % 60;
+
+    time.hr = t1.hr + t2.hr + time.min / 60;
+    time.min = time.min % 60;
+
+    return time;
+}
+
+int main() {
+    Time t1, t2, sum;
+
+    cout << "Enter first time:\n";
+    t1.input();
+    cout<<emdl;
+    cout << "Enter second time:\n";
+    t2.input();
+    cout<<endl;
+    sum = addTime(t1, t2);
+
+    cout << "Sum of times: ";
+    sum.display();
+
+   
+}
