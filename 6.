@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+class phonebill {
+    string name;
+    string address;
+    string phno;
+    int num;
+
+public:
+    void input() {
+        cout << "Enter Name: ";
+        cin >> name;
+        
+        cout << "Enter Address: ";
+        cin >> address;
+        
+        cout << "Enter phone Number: ";
+        cin >> phno;
+        
+        cout << "Enter Number of Calls: ";
+        cin >> num;
+    }
+
+    friend void calculateamount(phonebill t);
+};
+
+void calculateamount(phonebill t) {
+    int amount = t.num * 2;
+    cout << "\nName: " << t.name << endl;
+    cout << "Address: " << t.address << endl;
+    cout << "phone Number: " << t.phno << endl;
+    cout << "Number of Calls: " << t.num << endl;
+    cout << "Amount to be paid: Rs. " << amount << endl;
+}
+
+int main() {
+    phonebill t;
+    t.input();
+    calculateamount(t);
+    
+}
