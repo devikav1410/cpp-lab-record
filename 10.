@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+class Person {
+protected:
+    string name;
+    int age;
+
+public:
+    void setperson(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+};
+
+
+class Student : public Person {
+private:
+    int rno;
+
+public:
+    void setstudent(string n, int a, int r) {
+        setperson(n,a);       
+        rno = r;
+    }
+
+    void showdetails() {
+        display();             
+        cout<<"Roll Number: "<<rno<<endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.setstudent("hazel", 25, 99);
+    s.showdetails();
+
+}
