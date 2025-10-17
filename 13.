@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+class polygon {
+public:
+    virtual float area() {
+        return 0;
+    }
+};
+
+class rectangle : public polygon {
+private:
+    float width, height;
+public:
+    rectangle(float w, float h) : width(w), height(h) {}
+    float area() {
+        return width * height;
+    }
+};
+
+class triangle : public polygon {
+private:
+    float base, height;
+public:
+    triangle(float b, float h) : base(b), height(h) {}
+    float area() {
+        return 0.5 * base * height;
+    }
+};
+
+int main() {
+    polygon* p;
+    rectangle rect(4, 5);
+    triangle tri(3, 4);
+
+    p = &rect;
+    cout<<"Rectangle Area: "<<p->area()<<endl;
+
+    p = &tri;
+    cout<<"Triangle Area: "<<p->area()<<endl;
+
+}
